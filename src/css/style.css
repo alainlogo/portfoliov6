@@ -1,0 +1,631 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* POUR EMPECHER LES BUG D4AFFICHAGE */
+
+[data-scroll-container],
+[data-scroll-section] {
+  perspective: 1px;
+}
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(78, 9, 9);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-button{
+    display: none;
+}
+
+/* @import url(&#39;
+https://fonts.googleapis.com/css2?family=Poppins&amp;
+display=swap&#39;
+);
+*/
+body {
+    font-family: sequel, sans-serif;
+    cursor: none;
+    /* background: #e4e4e4; */
+    background-color: black;
+    overflow: hidden;
+    /* color: wheat; */
+    color: #fff;
+    scroll-behavior: smooth;
+
+}
+img {
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    /* color: black; */
+    color: white;
+    cursor: none;
+
+}
+.logo, nav {
+    font-size: 20px;
+    font-weight: 500;
+    position: fixed;
+    padding-top: 80px;
+}
+.logo {
+    left: 100px;
+    z-index: 50;
+}
+nav {
+    right: 100px;
+    display: flex;
+    z-index: 50;
+}
+.les_deux:first-child {
+    margin-right: 30px;
+}
+section {
+    margin: 0 100px;
+}
+.header {
+    padding-top: 220px;
+    position: relative;
+}
+.header_centre {
+    width: 50%;
+    margin-left: 300px;
+}
+.header_centre .header_text {
+    width: 50%;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 300px;
+}
+.header_centre .header_img {
+    position: relative;
+    z-index: 2;
+}
+/* .header_centre .header_img img {
+    width:70%;
+} */
+.header_centre .header_img img {
+    width: 700px;
+    height: 700px;
+}
+.header_scroll {
+    position: relative;
+    overflow: hidden;
+}
+.h1_box {
+    position: absolute;
+    top: 500px;
+    font-size: 120px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 150%;
+    margin-right: 100px;
+    font-stretch: ultra-expanded;
+}
+.h1_haut {
+    z-index: 1;
+    position: relative;
+}
+.h1_bas {
+    position: absolute;
+    left: -50%;
+    z-index: 2;
+}
+.bord {
+    -webkit-text-stroke: 3px #484848;
+    color: transparent;
+}
+.prese {
+    width: 400px;
+    margin-left: 300px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 80px;
+}
+.titre {
+    display: flex;
+    flex-direction: column;
+    font-size: 150px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 78%;
+    margin-top: 150px;
+}
+.titre_travaux, .titre_hobby {
+    text-align: right;
+}
+.projet {
+    display: flex;
+    margin-top: 100px;
+}
+.projet .desc, .projet .tecno {
+    width: 50%;
+}
+.desc_img {
+    /* width: 100%; */
+    margin-bottom: 50px;
+}
+.imgbox{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+.imgbox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.projet_text {
+    display: flex;
+    font-weight: 700;
+}
+.projet_text p {
+    font-size: 35px;
+    margin-bottom: 20px;
+
+}
+.projet_text .nom {
+    margin-left: 50px;
+}
+.projet_text span{
+    color:  #e4e4e4;
+    font-size: 17px;
+}
+.projet2 {
+    flex-direction: row-reverse;
+}
+
+.projet2 ul {
+    width: 90%;
+    text-align: right;
+}
+.liste_arch {
+    width: 70%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.liste_arch li {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    transition: 0.3s;
+    border-bottom: 1px solid #484848;
+
+}
+.liste_arch li span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -99.9%;
+    left: 0;
+    background-color: #484848;
+    z-index: 1;
+    transition: 0.2s;
+
+}
+.liste_arch li:hover {
+    padding-left: 50px;
+}
+.liste_arch li:hover span{
+    top: 0%;
+}
+.arch_num{
+    padding-left: 20px;
+}
+.arch_nom{
+    font-size: 25px;
+}
+.liste_arch div {
+    width: 25%;
+    z-index: 2;
+
+}
+.section_hobby {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.hobby_img, .titre_hobby {
+    width: 50%;
+}
+.titre_hobby {
+    text-align: left;
+}
+.titre_hobby span {
+    margin-left: -10px;
+}
+.hobby_img {
+    margin-top: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+.hobby1, .hobby2 {
+    width: 50%;
+}
+.hobby1 {
+    margin-right: 10px;
+}
+.hobby_box {
+    position: relative;
+}
+.hobby_over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    font-size: 25px;
+    font-weight: 500;
+}
+.hobby_over .over_text {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hobby_over:hover {
+    opacity: 1;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.hobby_text {
+    font-size: 25px;
+    text-transform: lowercase;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin: 100px;
+    width: 400px;
+}
+.section_contact {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+}
+.contact, .titre_contact {
+    width: 50%;
+    margin-top: 200px;
+}
+.titre_contact {
+    text-align: right;
+    position: relative;
+    margin-left: -10px;
+}
+.bord2 {
+    position: relative;
+    z-index: 12;
+}
+.contact_img {
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.contact_img img {
+    width: 100%;
+}
+.contact {
+    padding: 200px;
+    font-size: 20px;
+}
+.contact p {
+    margin-bottom: 100px;
+}
+.contact .me_contact {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+.contact .me_contact p {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 0;
+    z-index: 2;
+}
+.me_contact .contact_span{
+    position: absolute;
+    left: 0;
+    bottom: -99%;
+    width: 100%;
+    height: 100%;
+    background-color: #484848;
+    transition: 0.3s;
+    z-index: 1;
+}
+.me_contact:hover .contact_span{
+    bottom: 0;
+}
+
+
+/* SOURIS */
+.inner-cursor{
+    position: fixed;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: width 0.5s, height 0.5s;
+    z-index: 11;
+}
+
+.inner-cursor.grow{
+    width: 50px;
+    height: 50px;
+    transition: width 0.5s, height 0.5s;
+    z-index: 150;
+}
+
+.outer-cursor{
+    position: fixed;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+
+/* RESPONSIVE 
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+ CSS 
+    
+}
+  
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    section {
+        margin: 0 50px;
+    }
+    .logo {
+        left: 50px;
+        font-size: 27px;
+
+    }
+    nav {
+        right: 50px;
+        font-size: 27px;
+    }
+    .header{
+        padding-top: 500px;
+    }
+    .header_text{
+        font-size: 30px;
+        margin-right: 0;
+    }
+    .header_centre .header_text {
+        margin-bottom: 600px;
+    }
+    .header_centre{
+        margin-left: 50px;
+    }
+    .h1_box{
+        padding-top: 350px;
+    }
+    .h1_box h1{
+        font-size: 150px;
+    }
+    .titre{
+        font-size: 100px;
+    }
+    .projet{
+        width: 100%;
+    }
+    .projet .desc, .projet {
+        width: 100%;
+    }
+    .projet_text p {
+        font-size: 40px;
+        margin-bottom: 20px;
+    
+    }
+    .projet_text span {
+        font-size: 25px;
+    }
+    .section_hobby{
+        display: none;
+    }
+    .liste_arch{
+        width: 100%;
+    }
+    .section_contact{
+        flex-direction: column-reverse;
+        height: unset;
+    }
+    .titre_contact{
+        left: 0;
+    }
+    .contact{
+        width: 50%;
+        padding: 100px;
+        margin-top: 100px;
+    }
+    .contact_img{
+        width: 350px;
+        height: 350px;
+        top: 290px;
+    }
+    .inner-cursor, .outer-cursor, .inner-cursor.grow{
+        display: none;
+    }
+}
+  
+
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+  @media screen and (min-width : 320px) and  (max-width: 480px) {
+    
+    section {
+        margin: 20px;
+    }
+    .bord {
+        -webkit-text-stroke: 1px #ffffff;
+    }
+    .logo, nav {
+        font-size: 17px;
+        font-weight: unset;
+        position: fixed;
+        padding-top: 20px;
+    }
+    .logo {
+        left: 20px;
+
+    }
+    nav {
+        right: 20px;
+    }
+    .header {
+        height: 85vh;
+        background-image: url(../img/bg.gif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .header_centre{
+        margin-left: 20px;
+    }
+    .header_centre .header_text {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 590px;
+    }
+    .h1_box{
+        padding-top: 10px;
+    } 
+    .h1_box h1{
+        font-size: 70px;
+        line-height: 100%;
+    }
+    .h1_haut {
+        z-index: 1;
+        position: relative;
+    }
+    .h1_bas {
+        position: absolute;
+        left: -30%;
+        z-index: 2;
+    }
+    .header_centre .header_img img {
+        /* width: 250px;
+        height: 250px; */
+        display: none;
+    }
+    .prese{
+        display: none;
+    }
+    .titre{
+        font-size: 50px;
+    }
+    .projet{
+        margin-top: 50px;
+    }
+    .projet .desc, .projet {
+        width: 100%;
+    }
+    .projet_text .nom {
+        margin-left: 20px;
+    }
+    .projet_text p {
+        font-size: 25px;
+        margin-bottom: 0;
+    
+    }
+    .projet_text span {
+        font-size: 20px;
+        display: none;
+    }
+    .imgbox{
+        height: 270px;
+    }
+    .liste_arch{
+        width: 100%;
+        padding-top: 50px;
+    }
+    .liste_arch div {
+        width: 50%;
+    }
+    .arch_nom{
+        font-size: 20px;
+        text-align: right;
+    }
+    .arch_type, .arch_tecno{
+        display: none;
+    }
+    .section_hobby{
+        display: none;
+    }
+    .section_contact {
+        display: flex;
+        flex-direction: column-reverse;
+        height: unset;
+    }
+    .titre_contact{
+        padding-top: 0;
+        margin-top: 100px;
+    }
+    .contact{
+        margin-top: 100px;
+        width: 100%;
+    }
+    .contact{
+        padding: 0;
+    }
+    .contact p{
+        margin-bottom: 50px;
+    }
+    .contact_img{
+        display: none;
+    }
+    .no_mob{
+        display: none;
+    }
+    .me_contact{
+        margin-bottom: 100px;
+    }
+    .projet2{
+        pointer-events: none;
+    }
+    
+  }
+  
